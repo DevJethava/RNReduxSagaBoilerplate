@@ -11,6 +11,9 @@ import { useTheme } from "react-native-paper";
 import { getDashbordData } from "../../redux/actions/homeActions";
 import { connect } from "react-redux";
 import Toast from "react-native-toast-message";
+import {
+  Const,
+} from "../../utils";
 
 const HomeScreen = ({ navigation, ...props }) => {
   const insets = useSafeAreaInsets();
@@ -50,7 +53,7 @@ const HomeScreen = ({ navigation, ...props }) => {
         barStyle={'light-content'}
       />
       <View style={styles.container}>
-        <Text>RNBoilerplate</Text>
+        <Text>{Const.lang.t("lbl_demo")}</Text>
       </View>
     </SafeAreaView>
   );

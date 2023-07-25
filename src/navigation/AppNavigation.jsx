@@ -9,6 +9,7 @@ import HomeScreen from '../containers/Home/HomeScreen';
 
 import AppLoader from '../components/AppLoader';
 import { Screen } from '../utils';
+import HistoryScreen from '../containers/Home/HistoryScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -18,6 +19,11 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name={Screen.HomeScreen}
         component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name={Screen.HistoryScreen}
+        component={HistoryScreen}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>

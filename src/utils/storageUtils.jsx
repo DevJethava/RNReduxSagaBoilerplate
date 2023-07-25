@@ -24,6 +24,12 @@ export const setTheme = theme => {
 };
 export const getTheme = () => AsyncStorage.getItem('@theme');
 
+/* HISTORY */
+export const setHistoryData = object => {
+  AsyncStorage.setItem('@history', `${object}`);
+};
+export const getHistoryData = () => AsyncStorage.getItem('@history');
+
 export const clearStorage = () => {
   AsyncStorage.clear();
 };

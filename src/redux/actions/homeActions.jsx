@@ -28,3 +28,22 @@ export const getDashbordData = (data, resolve, reject) => ({
   resolve,
   reject,
 });
+
+export const insertHistoryData = (data, resolve, reject) => ({
+  type: actionTypes.STOREGE_INSERT_HISTORY_DATA,
+  data,
+  resolve,
+  reject,
+});
+
+export const readHistoryData = (resolve, reject) => ({
+  type: actionTypes.STOREGE_READ_HISTORY_DATA,
+  resolve,
+  reject,
+});
+
+export const clearHistory = (resolve, reject) => ({
+  type: actionTypes.STOREGE_CLEAR_HISTORY_DATA,
+  resolve,
+  reject,
+});

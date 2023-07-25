@@ -6,13 +6,15 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ActivityIndicator, useTheme, Appbar, Button, TextInput, Avatar } from "react-native-paper";
-import { getDashbordData } from "../../redux/actions/homeActions";
+import { getDashbordData, insertHistoryData } from "../../redux/actions/homeActions";
 import { connect } from "react-redux";
 import Toast from "react-native-toast-message";
 import {
   Color,
   Const,
+  Images,
   Responsive,
+  Screen,
 } from "../../utils";
 import Loader from '../../components/Loader';
 import moment from 'moment';
@@ -33,13 +35,23 @@ const HomeScreen = ({ navigation, ...props }) => {
     const data = {};
     props.getDashbordData(data).then((value) => {
       // console.log(value.results[0]);
-      setResponse(value.results[0]);
+      let mData = value.results[0]
+      setResponse(mData);
+      insertHistoryData(mData)
     }, (error) => {
       console.log(error);
       Toast.show({
         type: "error",
         text1: "Something went wrong please try again",
       });
+    });
+  };
+
+  const insertHistoryData = (data) => {
+    props.insertHistoryData(data).then((value) => {
+      console.log("data sync success!");
+    }, (error) => {
+      console.log("Error While Sync!");
     });
   };
 
@@ -59,6 +71,7 @@ const HomeScreen = ({ navigation, ...props }) => {
       <View style={styles.container}>
         <Appbar.Header>
           <Appbar.Content title={Const.lang.t("lbl_title")} />
+          <Appbar.Action icon={Images.ic_history} onPress={() => { navigation.navigate(Screen.HistoryScreen) }} />
         </Appbar.Header>
         <StatusBar
           barStyle={"dark-content"}
@@ -147,6 +160,10 @@ const mapDispatchToProps = (dispatch) => ({
   getDashbordData: (data) =>
     new Promise((resolve, reject) => {
       dispatch(getDashbordData(data, resolve, reject));
+    }),
+  insertHistoryData: (data) =>
+    new Promise((resolve, reject) => {
+      dispatch(insertHistoryData(data, resolve, reject));
     }),
 });
 

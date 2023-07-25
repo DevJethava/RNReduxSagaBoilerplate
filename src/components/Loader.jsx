@@ -8,7 +8,7 @@ const AppLoader = (props) => {
     return (
       <View style={styles.container} zIndex={999}>
         <View style={styles.subContainer}>
-          <ActivityIndicator size={"large"} color={Color.webTheme.darkBlue} />
+          <ActivityIndicator size={"large"} color={Color.blue} />
         </View>
       </View>
     );

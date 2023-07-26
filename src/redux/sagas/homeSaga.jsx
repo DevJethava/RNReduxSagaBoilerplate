@@ -42,11 +42,15 @@ function* insertHistoryData({ data, resolve, reject }) {
   yield put(loader(true));
   try {
     let oldData = []
-    oldData = JSON.parse(yield call(StorageUtils.getHistoryData));
+    let mData = yield call(StorageUtils.getHistoryData);
+    if (mData !== null) {
+      oldData = JSON.parse(mData);
+    }
     oldData.splice(0, 0, data);
     yield call(StorageUtils.setHistoryData, JSON.stringify(oldData));
     resolve(true);
   } catch (error) {
+    console.log(error)
     reject(false);
   }
   yield put(loader(false));

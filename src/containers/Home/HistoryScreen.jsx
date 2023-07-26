@@ -33,7 +33,7 @@ const HistoryScreen = ({ navigation, ...props }) => {
 
   const getHistoryData = () => {
     props.readHistoryData().then((value) => {
-      console.log(value);
+      // console.log(value);
       if (value != null) {
         let data = JSON.parse(value);
         setResponse(data)

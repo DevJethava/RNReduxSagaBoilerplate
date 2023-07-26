@@ -51,7 +51,7 @@ const HomeScreen = ({ navigation, ...props }) => {
     props.insertHistoryData(data).then((value) => {
       console.log("data sync success!");
     }, (error) => {
-      console.log("Error While Sync!");
+      console.log("Error While Sync!", error);
     });
   };
 

@@ -2,7 +2,7 @@
 
 # Used Tech
 
-* Dummy API = https://randomuser.me/
+* Dummy API = [https://randomuser.me/api/]
 * API calling Library [https://axios-http.com/docs/intro]
 * React Native Navigation [https://reactnavigation.org/]
 * React Native Paper [https://callstack.github.io/react-native-paper/]

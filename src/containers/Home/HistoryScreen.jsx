@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ActivityIndicator, useTheme, Appbar, Button, TextInput, Avatar, Text } from "react-native-paper";
+import { ActivityIndicator, useTheme, Appbar, Button, TextInput, Avatar, Text, Card } from "react-native-paper";
 import { readHistoryData, clearHistory } from "../../redux/actions/homeActions";
 import { connect } from "react-redux";
 import Toast from "react-native-toast-message";
@@ -73,18 +73,22 @@ const HistoryScreen = ({ navigation, ...props }) => {
 
   const HistoryItem = ({ item, index }) => {
     return (
-      <View style={{ borderWidth: 1, marginHorizontal: 8, marginVertical: 4, padding: 8, borderRadius: 16, borderColor: Color.blue, flexDirection: 'row', alignItems: 'center' }}>
-        <View>
-          <Avatar.Image size={80} source={{
-            uri: item?.picture?.large ? item.picture.large : 'https://reactnative.dev/img/tiny_logo.png',
-          }} />
-        </View>
-        <View style={{ flexDirection: 'column', padding: 8 }}>
-          <Text variant="titleMedium">{item?.name?.title + " " + item?.name?.first + " " + item?.name?.last}</Text>
-          <Text variant="titleMedium">{item?.email}</Text>
-          <Text variant="titleMedium">{item?.phone}</Text>
-        </View>
-      </View>
+      <Card style={{ backgroundColor: Color.white, marginHorizontal: 8, marginVertical: 4, borderRadius: 16 }}>
+        <Card.Content>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View>
+              <Avatar.Image size={80} source={{
+                uri: item?.picture?.large ? item.picture.large : 'https://reactnative.dev/img/tiny_logo.png',
+              }} />
+            </View>
+            <View style={{ flexDirection: 'column', padding: 8 }}>
+              <Text variant="titleMedium">{item?.name?.title + " " + item?.name?.first + " " + item?.name?.last}</Text>
+              <Text variant="titleMedium">{item?.email}</Text>
+              <Text variant="titleMedium">{item?.phone}</Text>
+            </View>
+          </View>
+        </Card.Content>
+      </Card>
     );
   };
 

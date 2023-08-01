@@ -78,11 +78,11 @@ const HistoryScreen = ({ navigation, ...props }) => {
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View>
               <Avatar.Image size={80} source={{
-                uri: item?.picture?.large ? item.picture.large : 'https://reactnative.dev/img/tiny_logo.png',
+                uri: item?.image ? item.image : 'https://reactnative.dev/img/tiny_logo.png',
               }} />
             </View>
             <View style={{ flexDirection: 'column', padding: 8 }}>
-              <Text variant="titleMedium">{item?.name?.title + " " + item?.name?.first + " " + item?.name?.last}</Text>
+              <Text variant="titleMedium">{item?.name}</Text>
               <Text variant="titleMedium">{item?.email}</Text>
               <Text variant="titleMedium">{item?.phone}</Text>
             </View>

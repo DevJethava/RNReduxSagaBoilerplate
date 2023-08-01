@@ -48,7 +48,15 @@ const HomeScreen = ({ navigation, ...props }) => {
   };
 
   const insertHistoryData = (data) => {
-    props.insertHistoryData(data).then((value) => {
+    let mData = {
+      image: data?.picture?.large,
+      name: data?.name?.title + " " + data?.name?.first + " " + data?.name?.last,
+      email: data?.email,
+      phone: data?.phone,
+      dob: data?.dob?.date,
+      address: data?.location?.street?.number + ", " + data?.location?.street?.name
+    }
+    props.insertHistoryData(mData).then((value) => {
       console.log("data sync success!");
     }, (error) => {
       console.log("Error While Sync!", error);

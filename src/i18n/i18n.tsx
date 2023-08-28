@@ -5,8 +5,8 @@ import ch from "./locales/ch";
 I18n.fallbacks = true;
 
 I18n.translations = {
-  en,
-  ch
+    en,
+    ch
 };
 
 export default I18n;

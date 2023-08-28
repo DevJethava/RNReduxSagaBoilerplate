@@ -4,6 +4,6 @@ import homeReducer from './homeReducer';
 import appLoaderReducer from './appLoaderReducer';
 
 export const rootReducer = combineReducers({
-  appLoader: appLoaderReducer,
-  home: homeReducer,
+    appLoader: appLoaderReducer,
+    home: homeReducer,
 });

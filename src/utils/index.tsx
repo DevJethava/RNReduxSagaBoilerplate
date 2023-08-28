@@ -10,14 +10,14 @@ import lightTheme from './lightTheme';
 import darkTheme from './darkTheme';
 
 export {
-  Color,
-  CommonStyles,
-  CommonUtils,
-  Images,
-  Responsive,
-  Screen,
-  Const,
-  StorageUtils,
-  lightTheme,
-  darkTheme,
+    Color,
+    CommonStyles,
+    CommonUtils,
+    Images,
+    Responsive,
+    Screen,
+    Const,
+    StorageUtils,
+    lightTheme,
+    darkTheme,
 };
